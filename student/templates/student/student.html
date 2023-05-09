@@ -1,0 +1,25 @@
+<h1> All Student </h1 >
+  
+    <h2><a href="{% url 'student:addstudent' %}">addstudent</a></h2>
+  
+  <h2><a href="{% url 'student:editstudent' %}">editstudent</a></h2>
+
+<h1>First Name: {{ fname |upper  }}</h1>
+<h1>Last Name: {{ lname }}</h1>
+<p> {{ mylist }} </p>
+{% for i  in mylist  %}
+   <li> {{i}}</li>
+{% endfor %}
+
+<p>{{ mydict }}</p>
+
+
+{% for i in mydict %}
+    {{i}}
+{% endfor %}
+
+
+{% if  fname == 'saror' %}
+     <h1> welcome saror </h1>
+{% endif %}
+    
