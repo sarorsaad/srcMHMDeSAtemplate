@@ -1,0 +1,11 @@
+<h1>List of Patients</h1>
+<ul>
+  {% for patient in patient_list %}
+    <li>{{ patient.first_name }}</li>
+    <a href="{% url 'hospital:patient_detail' patient.pk %}">Show</a>
+    <a href="{% url 'hospital:patient_update' patient.pk %}">update</a>
+    <a href="{% url 'hospital:patient_delete' patient.pk %}">delete</a>
+  {% empty %}
+    <li>No patients found.</li>
+  {% endfor %}
+</ul>
