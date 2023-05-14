@@ -1,0 +1,72 @@
+{% extends 'layouts/base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+
+
+      
+
+    <div class="container article">
+        <div class="row justify-content-center align-items-stretch">
+          <article class="col-lg-8 order-lg-2 px-lg-5">
+            
+            <div class="media">
+                <a href="#"><img src="{{ post.image.url }}" alt="Image" class="img-fluid"></a>
+              </div>
+            
+            
+            <p>{{ post.description }}</p>
+      
+            <h3>{{ post.title }}</h3>
+            <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar.</p>
+      
+            <h3>On her way she met a copy</h3>
+            <p>Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
+      
+            <div class="pt-5 categories_tags">
+              <p>Categories: <a href="#">Design</a>,
+                <a href="#">Events</a>
+                Tags: <a href="#">#html</a>,
+                <a href="#">#trends</a></p>
+            </div>
+      
+            <div class="post-single-navigation d-flex align-items-stretch">
+                {% if post.get_previous_by_created_at %}
+                  <a href="{% url 'siteui:show' post.get_previous_by_created_at.id %}" class="mr-auto w-50 pr-4">
+                    <span class="d-block">Previous Post</span>
+                    {{ post.get_previous_by_created_at.title }}
+                  </a>
+                {% endif %}
+                {% if post.get_next_by_created_at %}
+                  <a href="{% url 'siteui:show' post.get_next_by_created_at.id %}" class="ml-auto w-50 text-right">
+                    <span class="d-block">Next Post</span>
+                    {{ post.get_next_by_created_at.title }}
+                  </a>
+                {% endif %}
+              </div>
+              
+      
+          </article>
+        </div>
+      </div>
+      
+      <div class="post-single-navigation d-flex align-items-stretch">
+        {% if post.get_previous_by_created_at %}
+          <a href="{% url 'siteui:show' post.get_previous_by_created_at.id %}" class="mr-auto w-50 pr-4">
+            <span class="d-block">Previous Post</span>
+            {{ post.get_previous_by_created_at.title }}
+          </a>
+        {% endif %}
+        {% if post.get_next_by_created_at %}
+          <a href="{% url 'siteui:show' post.get_next_by_created_at.id %}" class="ml-auto w-50 text-right">
+            <span class="d-block">Next Post</span>
+            {{ post.get_next_by_created_at.title }}
+          </a>
+        {% endif %}
+      </div>
+      
+     
+    
+    {% endblock content %}

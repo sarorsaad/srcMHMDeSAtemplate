@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'hospital',
     'staff',
     'siteui',
+    'post',
 ]
 
 MIDDLEWARE = [
