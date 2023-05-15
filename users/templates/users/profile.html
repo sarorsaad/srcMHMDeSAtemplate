@@ -1,2 +1,14 @@
 <h1>Profile</h1>
+
+{% if request.user.is_authenticated %}
+  <h1>{{ request.user.email }}</h1>
+  <br>
+  <h1>{{ request.user.first_name }}</h1>
+  <h1>{{ request.user.last_name }}</h1>
+  <img src="{{ request.user.profile.avatar.url }}" />
+  <br>
+  <br>
+{% endif %}
+
+
 <a href="{% url 'logout' %}">Logout</a>
