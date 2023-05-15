@@ -24,9 +24,9 @@ urlpatterns = [
     path('patient/', include('patient.urls')),
     path('hospital/', include('hospital.urls')),
     path('staff/', include('staff.urls')),
-    path('siteui', include('siteui.urls')),
+    path('', include('siteui.urls')),
     path('post/', include('post.urls')),
-    path('', include('users.urls')),
+    path('users', include('users.urls')),
 
 ]
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
